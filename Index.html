@@ -27,6 +27,37 @@
         <a href="#serveis">Serveis</a>
         <a href="#informacio">Informació</a>
     </nav>
+    <!-- seccio vols -->
+  <section id="vols">
+    <div class="contenidor">
+
+      <!-- pagina de  vols sortiedes/arribades -->
+      <div class="tabs">
+        <button class="tab actiu-tab" id="btn-sortides" onclick="canviarTab('sortides')">
+          ↑ Sortides
+        </button>
+        <button class="tab" id="btn-arribades" onclick="canviarTab('arribades')">
+          ↓ Arribades
+        </button>
+      </div>
+      <!-- FILTROS -->
+      <div class="filtres">
+        <div class="cerca-container">
+          <input
+            type="text"
+            id="cerca"
+            placeholder="Cerca destí o origen..."
+            oninput="filtrarVols()"
+          />
+        </div>
+        <div class="botons-estat">
+          <button class="btn-estat actiu-estat" onclick="filtrarPerEstat('tots', this)">Tots</button>
+          <button class="btn-estat" onclick="filtrarPerEstat('A temps', this)">A temps</button>
+          <button class="btn-estat" onclick="filtrarPerEstat('Retardat', this)">Retardat</button>
+          <button class="btn-estat" onclick="filtrarPerEstat('Embarcant', this)">Embarcant</button>
+          <button class="btn-estat" onclick="filtrarPerEstat('Cancel·lat', this)">Cancel·lat</button>
+        </div>
+      </div>
 
 
     <script src="/JavaScript/Script.js"></script>
