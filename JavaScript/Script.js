@@ -100,3 +100,20 @@ function canviarTab(tab) {
   mostrarVols();
 }
 
+// FILTto vols
+function filtrarVols() {
+  mostrarVols();
+}
+
+
+// obtenir clase css, configurar css linea 26
+
+function obtenirClasseEstat(estat) {
+  if (estat === "A temps") return "estat estat-atemps";
+  if (estat === "Retardat") return "estat estat-retardat";
+  if (estat === "Embarcant") return "estat estat-embarcant";
+  if (estat === "Cancel·lat") return "estat estat-cancelat";
+  if (estat === "Aterrat") return "estat estat-aterrat";
+  return "estat";
+}
+
