@@ -63,3 +63,7 @@ function actualitzarRellotge() {
   const any = ara.getFullYear();
   document.getElementById("data-avui").textContent = nomDia + ", " + dia + " de " + mes + " de " + any;
 }
+
+// Actualitza cada segon
+setInterval(actualitzarRellotge, 1000);
+actualitzarRellotge();
