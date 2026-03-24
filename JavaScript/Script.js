@@ -67,3 +67,36 @@ function actualitzarRellotge() {
 // Actualitza cada segon
 setInterval(actualitzarRellotge, 1000);
 actualitzarRellotge();
+
+// canvi de sortides i arribades
+
+
+function canviarTab(tab) {
+  tabActual = tab;
+
+  // Canviar classe activa als botons
+  document.getElementById("btn-sortides").classList.remove("actiu-tab");
+  document.getElementById("btn-arribades").classList.remove("actiu-tab");
+  document.getElementById("btn-" + tab).classList.add("actiu-tab");
+
+  // Canviar la capçalera de la columna
+  const thDesti = document.getElementById("th-destinacio");
+  if (tab === "sortides") {
+    thDesti.textContent = "Destí";
+  } else {
+    thDesti.textContent = "Origen";
+  }
+
+  // Tornar el filtre d'estat a "Tots"
+  estatActual = "tots";
+  document.querySelectorAll(".btn-estat").forEach(function(btn) {
+    btn.classList.remove("actiu-estat");
+  });
+  document.querySelector(".btn-estat").classList.add("actiu-estat");
+
+  // Netejar la cerca
+  document.getElementById("cerca").value = "";
+
+  mostrarVols();
+}
+
