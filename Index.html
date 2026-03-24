@@ -2,32 +2,32 @@
 <html lang="ca">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aeroport de Palma - PMI</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aeroport de Palma - PMI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- capçelera -->
-    <header>
-        <div class="header-esquerra">
-            <div>
-                <h1>Aeroport de Palma</h1>
-                <p class="subtitol">Son Sant Joan · PMI</p>
-            </div>
-        </div>
-        <div class="header-dreta">
-            <div class="rellotge" id="rellotge">00:00:00</div>
-            <div class="data" id="data-avui"></div>
-        </div>
-    </header>
-    <nav>
-        <a href="#vols" class="actiu">Vols</a>
-        <a href="#serveis">Serveis</a>
-        <a href="#informacio">Informació</a>
-    </nav>
-    <!-- seccio vols -->
+  <!-- capçelera -->
+  <header>
+    <div class="header-esquerra">
+      <div>
+        <h1>Aeroport de Palma</h1>
+        <p class="subtitol">Son Sant Joan · PMI</p>
+      </div>
+    </div>
+    <div class="header-dreta">
+      <div class="rellotge" id="rellotge">00:00:00</div>
+      <div class="data" id="data-avui"></div>
+    </div>
+  </header>
+  <nav>
+    <a href="#vols" class="actiu">Vols</a>
+    <a href="#serveis">Serveis</a>
+    <a href="#informacio">Informació</a>
+  </nav>
+  <!-- seccio vols -->
   <section id="vols">
     <div class="contenidor">
 
@@ -43,12 +43,7 @@
       <!-- FILTROS -->
       <div class="filtres">
         <div class="cerca-container">
-          <input
-            type="text"
-            id="cerca"
-            placeholder="Cerca destí o origen..."
-            oninput="filtrarVols()"
-          />
+          <input type="text" id="cerca" placeholder="Cerca destí o origen..." oninput="filtrarVols()" />
         </div>
         <div class="botons-estat">
           <button class="btn-estat actiu-estat" onclick="filtrarPerEstat('tots', this)">Tots</button>
@@ -58,9 +53,110 @@
           <button class="btn-estat" onclick="filtrarPerEstat('Cancel·lat', this)">Cancel·lat</button>
         </div>
       </div>
+      <!-- TAULA DE VOLS -->
+      <div class="taula-container">
+        <table id="taula-vols">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Vol</th>
+              <th id="th-destinacio">Destí</th>
+              <th>Companyia</th>
+              <th>Terminal</th>
+              <th>Porta</th>
+              <th>Estat</th>
+            </tr>
+          </thead>
+          <tbody id="cos-taula">
+            <!--Mockejare ses dades amb js -->
+          </tbody>
+        </table>
+        <p id="missatge-buit" style="display:none;">No s'han trobat vols.</p>
+      </div>
 
+    </div>
+  </section>
 
-    <script src="/JavaScript/Script.js"></script>
+  <!-- serveis, canviar icons per imatges, wind+V per posar mes icons i pegar diferents coses  -->
+  <section id="serveis">
+    <div class="contenidor">
+      <h2>Serveis de l'aeroport</h2>
+      <div class="targetes-serveis">
+        <div class="targeta">
+          <div class="icona-servei">🍽️</div>
+          <h3>Restaurants</h3>
+          <p>Diverses opcions de menjar i beguda a totes les terminals.</p>
+        </div>
+        <div class="targeta">
+          <div class="icona-servei">🛒</div>
+          <h3>Botigues</h3>
+          <p>Duty-free, moda, electrònica i souvenirs.</p>
+        </div>
+        <div class="targeta">
+          <div class="icona-servei">🚗</div>
+          <h3>Aparcament</h3>
+          <p>Aparcament disponible a curta i llarga estada.</p>
+        </div>
+        <div class="targeta">
+          <div class="icona-servei">🚌</div>
+          <h3>Transport</h3>
+          <p>Bus, taxi i lloguer de cotxes disponibles.</p>
+        </div>
+        <div class="targeta">
+          <div class="icona-servei">📶</div>
+          <h3>WiFi Gratuït</h3>
+          <p>Connexió gratuïta a tot l'aeroport.</p>
+        </div>
+        <div class="targeta">
+          <div class="icona-servei">🏥</div>
+          <h3>Servei Mèdic</h3>
+          <p>Assistència mèdica les 24 hores del dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- informacio -->
+  <section id="informacio">
+    <div class="contenidor">
+      <h2>Informació útil</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>Terminals</h3>
+          <ul>
+            <li><strong>Terminal A:</strong> Vols internacionals</li>
+            <li><strong>Terminal B:</strong> Vols nacionals </li>
+            <li><strong>Terminal C:</strong> Aviació privada </li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Contacte</h3>
+          <ul>
+            <li>Informació: 902 404 704</li>
+            <li> info@aeroport-palma.es</li>
+            <li> Carretera de l'Aeroport, Bunyola /li>
+            <li> Obert les 24 hores</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Consells</h3>
+          <ul>
+            <li>Arribar amb 2h d'antelació per a vols nacionals</li>
+            <li>Arribar amb 3h d'antelació per a vols internacionals</li>
+            <li>Porteu el DNI o passaport en regla</li>
+            <li>Màxim 100ml de líquids en cabina</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- peu pagina pensar en posar es drets, informacio contacte i avis canvi d hora -->
+  <footer>
+    <p>© 2025 Aeroport de Palma · PMI · Tots els drets reservats</p>
+  </footer>
+
+  <script src="/JavaScript/Script.js"></script>
 </body>
 
 </html>
