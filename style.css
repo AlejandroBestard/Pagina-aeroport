@@ -11,3 +11,52 @@ body {
   background-color: #f0f2f5;
   color: #333;
 }
+
+/* Header */
+
+header {
+  background-color: #1a2a4a;
+  color: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-esquerra {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icona-avio {
+  font-size: 2.5rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.subtitol {
+  font-size: 0.85rem;
+  color: #a0b4cc;
+  margin-top: 2px;
+}
+
+.header-dreta {
+  text-align: right;
+}
+
+.rellotge {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: monospace;
+  color: #f0c040;
+}
+
+.data {
+  font-size: 0.85rem;
+  color: #a0b4cc;
+  margin-top: 3px;
+}
