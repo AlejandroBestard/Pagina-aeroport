@@ -117,3 +117,64 @@ function obtenirClasseEstat(estat) {
   return "estat";
 }
 
+// MOSTRAR VOLS A LA TAULA
+
+function mostrarVols() {
+  const cosTabla = document.getElementById("cos-taula");
+  const missatgeBuit = document.getElementById("missatge-buit");
+  const textCerca = document.getElementById("cerca").value.toLowerCase();
+
+  // Agafar les dades correctes segons el tab
+  let dades;
+  if (tabActual === "sortides") {
+    dades = sortides;
+  } else {
+    dades = arribades;
+  }
+
+  // Filtrar per estat
+  if (estatActual !== "tots") {
+    dades = dades.filter(function(vol) {
+      return vol.estat === estatActual;
+    });
+  }
+
+  // Filtrar per cerca
+  if (textCerca !== "") {
+    dades = dades.filter(function(vol) {
+      const lloc = vol.desti || vol.origen;
+      return lloc.toLowerCase().includes(textCerca);
+    });
+  }
+
+  // Netejar la taula
+  cosTabla.innerHTML = "";
+
+  // Comprovar si hi ha vols
+  if (dades.length === 0) {
+    missatgeBuit.style.display = "block";
+    return;
+  }
+
+  missatgeBuit.style.display = "none";
+
+  // Afegir cada vol com una fila
+  dades.forEach(function(vol) {
+    const fila = document.createElement("tr");
+    const lloc = vol.desti || vol.origen;
+    const classeEstat = obtenirClasseEstat(vol.estat);
+
+    fila.innerHTML =
+      "<td class='hora'>" + vol.hora + "</td>" +
+      "<td class='num-vol'>" + vol.vol + "</td>" +
+      "<td>" + lloc + "</td>" +
+      "<td>" + vol.companyia + "</td>" +
+      "<td>" + vol.terminal + "</td>" +
+      "<td>" + vol.porta + "</td>" +
+      "<td><span class='" + classeEstat + "'>" + vol.estat + "</span></td>";
+
+    cosTabla.appendChild(fila);
+  });
+}
+
+mostrarVols();
