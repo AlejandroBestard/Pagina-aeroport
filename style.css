@@ -60,3 +60,42 @@ header h1 {
   color: #a0b4cc;
   margin-top: 3px;
 }
+
+/* Navegacio */
+nav {
+  background-color: #243555;
+  display: flex;
+  gap: 0;
+  padding: 0 40px;
+}
+
+nav a {
+  color: #ccd8e8;
+  text-decoration: none;
+  padding: 13px 22px;
+  font-size: 0.95rem;
+  display: block;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background-color: #1a2a4a;
+  color: white;
+}
+
+nav a.actiu {
+  background-color: #f0c040;
+  color: #1a2a4a;
+  font-weight: bold;
+}
+
+/* ontenidor principal */
+.contenidor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* Vols */
+#vols {
+  padding: 30px 0;
+}
