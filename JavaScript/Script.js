@@ -105,6 +105,15 @@ function filtrarVols() {
   mostrarVols();
 }
 
+function filtrarPerEstat(estat, boto) {
+  estatActual = estat;
+  document.querySelectorAll(".btn-estat").forEach(function(btn) {
+    btn.classList.remove("actiu-estat");
+  });
+  boto.classList.add("actiu-estat");
+  mostrarVols();
+}
+
 
 // obtenir clase css, configurar css linea 26
 
